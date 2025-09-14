@@ -1,21 +1,25 @@
 "use client"
 import { useEffect } from 'react';
 import useStore from '../store/store';
-import { fetchCharacters } from '../lib/swapi';
+import { fetchCharacters, fetchFilms, fetchStarships } from '../lib/swapi';
 import CharacterCard from './CharacterCard';
 
 const CharacterList = () => {
-  const { characters, setCharacters, isLoading, setLoading } = useStore();
+  const { characters, films, starships, setCharacters, isLoading, setLoading, setFilms, setStarships  } = useStore();
 
-  const loadCharacters = async (page = 1) => {
+  const loadInfo = async (page = 1) => {
     setLoading(true);
     const data = await fetchCharacters(page);
     setCharacters(data);
+    const dataFilms = await fetchFilms(page);
+    setFilms(dataFilms);
+    const dataStarships = await fetchStarships(page);
+    setStarships(dataStarships);
     setLoading(false);
   };
 
   useEffect(() => {
-    loadCharacters();
+    loadInfo();
   }, []);
 
   return (
@@ -23,7 +27,7 @@ const CharacterList = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        characters.map((character) => <CharacterCard key={character.name} character={character} />)
+        characters.map((character) => <CharacterCard key={character.name} character={character} films={films} starships={starships} />)
       )}
     </div>
   );

@@ -14,8 +14,6 @@ const CharacterFavorites = () => {
     setLoading(false);
   };
 
-  console.log('favoriteCharacters', favoriteCharacters)
-
   useEffect(() => {
     loadCharacters();
   }, []);
