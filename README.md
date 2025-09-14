@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Tech Stack
+
+Next.js (App Router), Tailwind, ShadCN UI, React, Axios, and Zustand
+
+## Trade Off or Decisions
+
+I try to use https://swapi.dev for make the pagination, but it was not working... so I have to change it for https://swapi.info, but this one has not page attribute for get them. So the I did not do the implementation
+
+I has some issues like dialog that was not want to close. I have to add a button and hide the X.
+
+
