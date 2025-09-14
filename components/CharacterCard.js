@@ -72,7 +72,7 @@ const CharacterCard = ({ character, films, starships }) => {
             View Details
           </button>
           <button
-            className={`mt-2 px-4 py-2 rounded ${
+            className={`mt-2 px-4 py-2 text-white rounded ${
               isFavorite(character.name) ? 'bg-red-500' : 'bg-yellow-500'
             }`}
             onClick={toggleFavorite}
@@ -82,10 +82,10 @@ const CharacterCard = ({ character, films, starships }) => {
         </div>
       </div>
 
-      <Dialog open={isOpen} onClose={() => handleClose()}>
-        <DialogContent>
+      <Dialog open={isOpen} onClose={() => handleClose()} showCloseButton={false}>
+        <DialogContent className="[&>button]:hidden">
           <DialogTitle>{character.name}</DialogTitle>
-          <DialogDescription className="lg:w-1/4">
+          <DialogDescription>
             {details ? (
               <>
                 <span><strong>Height:</strong> {details.height}</span><br/>
@@ -127,7 +127,7 @@ const CharacterCard = ({ character, films, starships }) => {
           </DialogDescription>
           <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
-            <Button type="button" variant="secondary" onClick={() => handleClose()}>
+            <Button className="bg-blue-500 text-white rounded" type="button" variant="secondary" onClick={() => handleClose()}>
               Close
             </Button>
           </DialogClose>

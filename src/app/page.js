@@ -7,7 +7,7 @@ const Home = () => {
     <div className="min-h-screen">
       <main className="container mx-auto p-6">
         <h1 className="text-4xl font-semibold text-center mb-8">Star Wars Characters</h1>
-        <Tabs defaultValue="characters" className="w-[800px]">
+        <Tabs defaultValue="characters" >
           <TabsList>
             <TabsTrigger value="characters" >Characters</TabsTrigger>
             <TabsTrigger value="favorites">Only Favorites</TabsTrigger>
